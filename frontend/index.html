@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple CRUD DApp</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 20px;
+        }
+        .container {
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="mb-4">Simple CRUD DApp</h1>
+    <button id="connectWalletButton" class="btn btn-primary mb-3">Connect Wallet</button>
+
+    <div id="crudOperations" style="display: none;">
+
+        <div class="form-group">
+            <label for="createInput">Create Item</label>
+            <input id="createInput" type="text" class="form-control" placeholder="Enter data to create item">
+            <button onclick="createItem()" class="btn btn-success mt-2">Create Item</button>
+        </div>
+        
+        <div class="form-group">
+            <label for="readInput">Read Item</label>
+            <input id="readInput" type="text" class="form-control" placeholder="Enter item ID to read">
+            <button onclick="readAllItems()" class="btn btn-secondary mt-2">Read Item</button>
+            <p id="readOutput" class="mt-2"></p>
+        </div>
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">#ID</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="itemsTable">
+            </tbody>
+        </table>
+        
+        <div class="form-group">
+            <label for="updateIdInput">Update Item</label>
+            <input id="updateIdInput" type="number" class="form-control" placeholder="Enter item ID to update">
+            <input id="updateDataInput" type="text" class="form-control mt-2" placeholder="Enter new data">
+            <button onclick="updateItem()" class="btn btn-warning mt-2">Update Item</button>
+        </div>
+        
+        <div class="form-group">
+            <label for="deleteInput">Delete Item</label>
+            <input id="deleteInput" type="number" class="form-control" placeholder="Enter item ID to delete">
+            <button onclick="deleteItem()" class="btn btn-danger mt-2">Delete Item</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
